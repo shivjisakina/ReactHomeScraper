@@ -34,7 +34,7 @@ module.exports = (
 
 
             {/* If user selects any other path... we get the Info Route */}
-            <IndexRoute component={} />
+            <IndexRoute component={Search} />
 
         </Route>
     </Router>
