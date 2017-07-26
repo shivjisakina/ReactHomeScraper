@@ -94,7 +94,7 @@ const Main = React.createClass({
                             'fontSize': '68px'
                         }}>New York Times Article Scraper</h2>
                         <br/>
-                        <p className="text-center" style={{
+                        <p className="text-center blue" style={{
                             'color': 'pink',
                             'textShadow': '3px 3px 10px black',
                             'fontSize': '32px'
