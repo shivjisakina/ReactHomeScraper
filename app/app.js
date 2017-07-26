@@ -4,5 +4,5 @@ const Main = require('./Components/Main')
 
 // Render Main in App
 ReactDOM.render(
-	<Main />, document.getElementById('app')
+    <Main />, document.getElementById('app')
 )

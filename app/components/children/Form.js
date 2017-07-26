@@ -26,7 +26,7 @@ const Form = React.createClass({
 	// Render HTML
 	render: function(){
 		return(
-			<div className="panel panel-info">
+			<div className="panel SearchPanel">
 				<div className="panel-heading">
 					<h2 className="panel-title text-center bold">Search For Articles</h2>
 				</div>

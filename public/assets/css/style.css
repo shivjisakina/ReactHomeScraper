@@ -4,4 +4,24 @@ body {
 
 .title {
     color: black;
- }
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.SearchPanel {
+    background-color: gray;
+}
+
+.ResultPanel {
+    background-color: gray;
+}
+
+.SavedPanel {
+    background-color: gray;
+}
+
+.panel-body {
+    background-color: snow;
+}
