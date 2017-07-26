@@ -2,30 +2,28 @@
 // Had to switch to var bc Const gave error
 var axios = require('axios');
 
-var nytAPI = "097be422255e45a18b6864a8176f4a6c";
+var APIkey = "a7ba7cef867545aabd87e9921566b853";
 
 var helpers = {
 	runQuery: function(topic, startYear, endYear){
 
 		// Scraping from the NYT website
-		var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" + nytAPI + "&q=" + topic + "&begin_date=" + startYear + "0101&end_date=" + endYear + "0101";
+		var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" + APIkey + "&q=" + topic + "&begin_date=" + startYear + "0101&end_date=" + endYear + "0101";
 
 		return axios.get(queryURL)
 			.then(function(response){
-				var newResults = [];
-				var fullResults = response.data.response.docs;
+				var Results = [];
+				var allResults = response.data.response.docs;
 				var counter = 0;
 
-				for(var i = 0; i < fullResults.length; i++){
-					if(counter > 4) {
-						return newResults;
-					}
-					if(fullResults[counter].headline.main && fullResults[counter].pub_date && fullResults[counter].web_url) {
-						newResults.push(fullResults[counter]);
+				for(var i = 0; i < allResults.length; i++){
+
+					if(allResults[counter].headline.main && allResults[counter].pub_date && allResults[counter].web_url) {
+						newResults.push(allResults[counter]);
 						counter++;
 					}
 				}
-				return newResults;
+				return Results;
 		})
 	},
 	// Storing results in the db
@@ -38,5 +36,5 @@ var helpers = {
 	}
 }
 
-// Export Helpers
+// Module exporting
 module.exports = helpers;

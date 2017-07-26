@@ -48,7 +48,7 @@ const Main = React.createClass({
             }.bind(this));
         this.getArticle();
     },
-    // Capture Article
+    // Get Article
     getArticle: function () {
         axios.get('/api/saved')
             .then(function (response) {
@@ -58,47 +58,15 @@ const Main = React.createClass({
             }.bind(this));
     },
 
-    // Updates Comp.
-    componentDidUpdate: function (prevProps, prevState) {
-        if (prevState.topic != this.state.topic) {
-            // console.log("UPDATED");
-            helpers.runQuery(this.state.topic, this.state.startYear, this.state.endYear)
-                .then(function (data) {
-                    console.log(data);
-                    if (data != this.state.results) {
-                        this.setState({
-                            results: data
-                        })
-                    }
-                }.bind(this))
-        }
-    },
-    // Save Comp.
-    componentDidMount: function () {
-        axios.get('/api/saved')
-            .then(function (response) {
-                this.setState({
-                    savedArticles: response.data
-                });
-            }.bind(this));
-    },
     // Render HTML
     render: function () {
         return (
             <div className="container">
                 <div className="row">
                     <div className="jumbotron">
-                        <h2 className="text-center" style={{
-                            'color': 'black',
-                            'textShadow': '3px 3px 10px black',
-                            'fontSize': '68px'
-                        }}>New York Times Article Scraper</h2>
+                        <h2 className="text-center">New York Times Article Scraper</h2>
                         <br/>
-                        <p className="text-center blue" style={{
-                            'color': 'pink',
-                            'textShadow': '3px 3px 10px black',
-                            'fontSize': '32px'
-                        }}>Scrape and Save your articles with ease!</p>
+                        <p className="text-center">Scrape and Save your articles with ease!</p>
                     </div>
                 </div>
                 <div className="row">
