@@ -32,10 +32,13 @@ db.once('open', function () {
 
 // Routes
 app.get('/', function (req, res) {
+
     res.sendFile('./public/index.html');
+
 })
 
 app.get('/api/saved', function (req, res) {
+
     Article.find({})
         .exec(function (err, doc) {
             if (err) {
@@ -44,16 +47,20 @@ app.get('/api/saved', function (req, res) {
                 res.send(doc);
             }
         })
+
 });
 
 app.post('/api/saved', function (req, res) {
+
     const newArticle = new Article({
         title: req.body.title,
         date: req.body.date,
         url: req.body.url
+
     });
 
     newArticle.save(function (err, doc) {
+
         if (err) {
             console.log(err);
             res.send(err);
@@ -61,6 +68,7 @@ app.post('/api/saved', function (req, res) {
             res.json(doc);
         }
     });
+
 });
 
 app.delete('/api/saved/:id', function (req, res) {

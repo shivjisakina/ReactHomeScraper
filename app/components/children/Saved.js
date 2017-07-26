@@ -29,7 +29,7 @@ const Saved = React.createClass({
         return (
             <div className="panel panel-warning">
                 <div className="panel-heading">
-                    <h3 className="panel-title text-center"><strong>Saved Articles</strong></h3>
+                    <h3 className="panel-title text-center bold">Saved Articles</h3>
                 </div>
                 <div className="panel-body">
                     {/* Map function loops through an array in JSX*/}
