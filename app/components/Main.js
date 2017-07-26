@@ -12,7 +12,7 @@ const helpers = require('./utils/helper.js');
 // Exporting main to app.js
 const Main = React.createClass({
 
-    // State for clicks
+    //getting initial state
     getInitialState: function () {
         return {
             topic: "",
@@ -23,7 +23,7 @@ const Main = React.createClass({
         }
     },
 
-    // Allow child to update the parent w/ searchTerms
+    // setting the term
     setTerm: function (tpc, stYr, endYr) {
         this.setState({
             topic: tpc,
@@ -31,12 +31,12 @@ const Main = React.createClass({
             endYear: endYr
         })
     },
-    // Save Article
+    // Saving the article Article
     saveArticle: function (title, date, url) {
         helpers.postArticle(title, date, url);
         this.getArticle();
     },
-    // Delete Article
+    // Deleting the Article
     deleteArticle: function (article) {
         console.log(article);
         axios.delete('/api/saved/' + article._id)
@@ -58,7 +58,7 @@ const Main = React.createClass({
             }.bind(this));
     },
 
-    // Render HTML
+    // Rendering the HTML
     render: function () {
         return (
             <div className="container">
