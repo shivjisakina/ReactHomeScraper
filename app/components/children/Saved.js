@@ -1,6 +1,6 @@
 const React = require('react');
 
-// Create Saved Comp.
+// Exporting saved to main
 const Saved = React.createClass({
 
     getInitialState: function () {
@@ -8,12 +8,14 @@ const Saved = React.createClass({
             savedArticles: []
         }
     },
-    // Delete Article w/ Clicks
+
+    // Delete article on click
     clickToDelete: function (result) {
         this.props.deleteArticle(result);
 
     },
-    // Saved Child recieve Props
+
+    // sending props to saved child
     componentWillReceiveProps: function (nextProps) {
         const that = this;
         console.log(nextProps);
@@ -29,7 +31,7 @@ const Saved = React.createClass({
         });
         this.setState({savedArticles: myResults});
     },
-    // Render HTML
+    // Rendering the html
     render: function () {
         return (
             <div className="panel SavedPanel">
@@ -44,5 +46,5 @@ const Saved = React.createClass({
     }
 });
 
-// Export Saved
+// Module exports
 module.exports = Saved;

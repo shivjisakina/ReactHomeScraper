@@ -1,15 +1,15 @@
 const axios = require('axios');
 const React = require('react');
 
-// Sub-Comps.
+
 const Form = require('./Children/Form');
 const Results = require('./Children/Results');
 const Saved = require('./Children/Saved');
 
-// Require Helper
+// Requiring the Helper
 const helpers = require('./utils/helper.js');
 
-// Main Comp. 
+// Exporting main to app.js
 const Main = React.createClass({
 
     // State for clicks
@@ -116,5 +116,5 @@ const Main = React.createClass({
     }
 });
 
-// Export Main
+// Module Exports
 module.exports = Main;

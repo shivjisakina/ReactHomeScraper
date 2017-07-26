@@ -31,7 +31,7 @@ db.once('open', function () {
     console.log('Mongoose connection successful.');
 });
 
-// Routes
+// get, post, delete routes
 app.get('/', function (req, res) {
     res.sendFile('./public/index.html');
 })
@@ -71,7 +71,7 @@ app.delete('/api/saved/:id', function (req, res) {
         });
 });
 
-// Listening on Port
+// app listen on port 3000
 app.listen(PORT, function () {
     console.log("App listening on PORT: " + PORT);
 });

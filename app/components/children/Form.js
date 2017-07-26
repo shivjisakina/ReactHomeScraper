@@ -1,9 +1,8 @@
 const React = require('react');
 
-// Create Form Comp.
+// Exporting to parent
 const Form = React.createClass({
 
-	// The main state
 	getInitialState: function(){
 		return {
 			topic: "",
@@ -11,19 +10,19 @@ const Form = React.createClass({
 			endYear: ""
 		}
 	},
- 	// Handle Pre Search Change
+
 	handleChange: function(event){
     	// Pre Search 
     	const newState = {};
     	newState[event.target.id] = event.target.value;
     	this.setState(newState);
 	},
-	// Handle Search Term
+
 	handleClick: function(){
 		// Parent Search Term
 		this.props.setTerm(this.state.topic, this.state.startYear, this.state.endYear);
 	},
-	// Render HTML
+	// Rendering the html
 	render: function(){
 		return(
 			<div className="panel SearchPanel">
@@ -51,5 +50,5 @@ const Form = React.createClass({
 	}
 });
 
-// Export Form
+// Module exports
 module.exports = Form;

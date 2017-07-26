@@ -1,6 +1,6 @@
 const React = require('react');
 
-// Create Results Comp.
+// Exporting results to parent
 const Results = React.createClass({
 
     getInitialState: function () {
@@ -11,11 +11,13 @@ const Results = React.createClass({
             results: []
         }
     },
-    // Save Article w/ Clicks
+
+    // Saving the articles on click
     clickToSave: function (result) {
         this.props.saveArticle(result.headline.main, result.pub_date, result.web_url);
     },
-    // Results Child recieve Props
+
+    // Sending props to result child
     componentWillReceiveProps: function (nextProps) {
         const that = this;
         const myResults = nextProps.results.map(function (search, i) {
@@ -30,7 +32,7 @@ const Results = React.createClass({
         });
         this.setState({results: myResults});
     },
-    // Render HTML
+    // Rendering the html
     render: function () {
         return (
             <div className="panel ResultPanel">
@@ -45,5 +47,5 @@ const Results = React.createClass({
     }
 });
 
-// Export Results
+// Module exports
 module.exports = Results;
