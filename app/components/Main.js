@@ -24,11 +24,11 @@ const Main = React.createClass({
     },
 
     // setting the term
-    setTerm: function (tpc, stYr, endYr) {
+    setTerm: function (topic, start, end) {
         this.setState({
-            topic: tpc,
-            startYear: stYr,
-            endYear: endYr
+            topic: topic,
+            startYear: start,
+            endYear: end
         })
     },
     // Saving the article Article
