@@ -31,7 +31,7 @@ const Results = React.createClass({
 	// Render HTML
 	render: function(){
 		return(
-			<div className="panel panel-success">
+			<div className="panel panel-primary">
 				<div className="panel-heading">
 					<h3 className="panel-title text-center bold">Articles</h3>
 				</div>

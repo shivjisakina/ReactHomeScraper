@@ -30,7 +30,7 @@ const Saved = React.createClass({
 	// Render HTML
 	render: function(){
 		return(
-			<div className="panel panel-warning">
+			<div className="panel panel-danger">
 				<div className="panel-heading">
 					<h3 className="panel-title text-center bold">Saved Articles</h3>
 				</div>
