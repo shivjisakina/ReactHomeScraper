@@ -4,10 +4,11 @@ const bodyParser = require('body-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 
-const Article = require('./models/Article.js');
-
 const app = express();
+
 const PORT = process.env.PORT || 3000;
+
+const Article = require('./models/Article.js');
 
 // App use
 app.use(logger('dev'));
